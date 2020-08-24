@@ -1,5 +1,4 @@
 import React, {useRef, useEffect} from "react";
-import "../Styles/InputBox Styles.css";
 
 function InputBox(props) {
   //checks for touchscreen for hover effect management

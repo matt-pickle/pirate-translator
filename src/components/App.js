@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import '../Styles/App.css';
 import InputBox from "./InputBox";
 import OutputBox from "./OutputBox";
 
@@ -29,12 +28,16 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="app-container">
       <InputBox text={text}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
       />
       <OutputBox pirateText={pirateText}/>
+      <a className="attribution-link"
+         href='https://www.freepik.com/vectors/tree'>
+         Tree vector created by upklyak - www.freepik.com
+      </a>
     </div>
   )
 }

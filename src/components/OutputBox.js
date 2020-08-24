@@ -1,5 +1,4 @@
 import React from "react";
-import "../Styles/OutputBox Styles.css";
 
 function OutputBox(props) {
   return (
