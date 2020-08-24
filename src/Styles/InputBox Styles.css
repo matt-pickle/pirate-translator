@@ -1,0 +1,29 @@
+@font-face {
+  font-family: USDeclaration;
+  src: url("../Fonts/USDeclaration.ttf");
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  height: 300px;  
+  background-image: url("../Graphics/Scroll cropped.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.input {
+  font-family: USDeclaration, serif;
+  width: 80%;
+  height: 35%;
+  background-color: transparent;
+  border: solid black 2px;
+}
+
+.button {
+  
+}
