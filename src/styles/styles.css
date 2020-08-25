@@ -18,14 +18,13 @@ img {
   height: 100vh;
   background-image: url("../images/1434.jpg");
   background-repeat: no-repeat;
-  /* background-attachment: fixed; */
   background-size: cover;
   background-position: center;
 }
 
 /* INPUT BOX */
 
-.form {
+.input-box-container {
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,20 +1,9 @@
-import React, {useRef, useEffect} from "react";
+import React from "react";
+import Button from "./Button";
 
 function InputBox(props) {
-  //checks for touchscreen for hover effect management
-  const buttonClass = useRef("nonTouch");
-  useEffect(() => {
-    if ("ontouchstart" in window
-       || navigator.maxTouchPoints > 0
-       || navigator.msMaxTouchPoints > 0) {
-      buttonClass.current = "touch";   
-    }
-  });
-
   return (
-    <form className="form"
-          onSubmit={props.handleSubmit}
-    >
+    <div className="input-box-container">
       <textarea name="input"
                 className="input"
                 value={props.text}
@@ -22,11 +11,10 @@ function InputBox(props) {
                 maxLength="500"
                 onChange={props.handleChange}
       />
-      <input type="submit"
-             value="Translate"
-             className={"button " + buttonClass.current}
+      <Button text="Translate"
+              onClick={props.handleSubmit}
       />
-    </form>
+    </div>
   );
 }
 
