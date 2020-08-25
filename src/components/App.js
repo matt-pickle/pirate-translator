@@ -14,17 +14,17 @@ function App() {
   //calls Pirate Translator API with text input and saves translation to state
   function handleSubmit(event) {
     fetch("https://api.funtranslations.com/translate/pirate.json?text=" + text)
-    .then(response => {
-      if (response.ok) {
-        return response.json();
+    .then(res => {
+      if (res.ok) {
+        return res.json();
       } else {
-        throw new Error("API Request Failed!");
+        console.error("API Request Failed!");
+        setPirateText("Error: Request Failed! (Probably exceeded the 5 calls per hour limit)");
       }
     })
     .then(data => {
       setPirateText(data.contents.translated);
     });    
-    event.preventDefault();
   }
 
   return (
