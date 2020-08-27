@@ -38,6 +38,10 @@ function App() {
          href='https://www.freepik.com/vectors/tree'>
          Tree vector created by upklyak - www.freepik.com
       </a>
+      <a className="attribution-link"
+         href="http://www.freepik.com">
+         Designed by Brgfx / Freepik
+      </a>
     </div>
   )
 }

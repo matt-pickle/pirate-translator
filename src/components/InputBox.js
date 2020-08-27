@@ -4,6 +4,7 @@ import Button from "./Button";
 function InputBox(props) {
   return (
     <div className="input-box-container">
+      <img className="scroll" src="scroll-small.png" alt="scroll"></img>
       <textarea name="input"
                 className="input"
                 value={props.text}
