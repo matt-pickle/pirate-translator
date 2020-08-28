@@ -34,14 +34,15 @@ function App() {
                 handleSubmit={handleSubmit}
       />
       <OutputBox pirateText={pirateText}/>
-      <a className="attribution-link"
-         href='https://www.freepik.com/vectors/tree'>
-         Tree vector created by upklyak - www.freepik.com
-      </a>
-      <a className="attribution-link"
-         href="http://www.freepik.com">
-         Designed by Brgfx / Freepik
-      </a>
+      <div className="attribution-links-container">
+        <a href="http://www.freepik.com">
+          parchment created by Brgfx - www.freepik.com
+        </a>  
+        <a href='https://www.freepik.com/vectors/tree'>
+          background image created by upklyak - www.freepik.com
+        </a>
+      </div>
+      
     </div>
   )
 }

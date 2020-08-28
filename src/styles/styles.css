@@ -15,6 +15,15 @@ img {
 }
 
 .app-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: min-content auto min-content min-content;
+  grid-template-areas:
+    "input"
+    "..."
+    "output"
+    "links";
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -22,6 +31,20 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 30%;
+}
+
+.attribution-links-container {
+  grid-area: links;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: .5em;
+}
+
+a {
+  color: black;
+  font-size: .75rem;
 }
 
 @media (max-width: 700px) {
@@ -45,6 +68,7 @@ img {
 /* INPUT BOX */
 
 .input-box-container {
+  grid-area: input;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 65% 1fr;
