@@ -9,7 +9,7 @@ function InputBox(props) {
                 className="input"
                 value={props.text}
                 placeholder="Type text to translate here"
-                maxLength="500"
+                maxLength="200"
                 onChange={props.handleChange}
       />
       <Button text="Translate"

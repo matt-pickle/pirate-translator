@@ -2,7 +2,9 @@ import React from "react";
 
 function OutputBox(props) {
   return (
-    <h1>{props.pirateText}</h1>
+    <div className="output-box-container">
+      <p className="output-text">{props.pirateText}</p>
+    </div>
   )
 }
 

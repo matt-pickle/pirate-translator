@@ -75,6 +75,7 @@ a {
   grid-gap: .25em;
   justify-items: center;
   width: 100%;
+  height: 100%;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -91,7 +92,24 @@ a {
   background-color: transparent;
   border: none;
   z-index: 1;
+  scrollbar-color: rgb(80, 35, 10) transparent;
+  scrollbar-width: thin;
 }
+
+.input::-webkit-scrollbar {
+  width: .25em;
+  height: 0;
+}
+
+.input::-webkit-scrollbar-track {
+  background: none;
+}
+
+.input::-webkit-scrollbar-thumb {
+  background: rgb(80, 35, 10);
+  border: none;
+}
+
 
 .button {
   grid-row: 2;
@@ -122,5 +140,31 @@ a {
   .input,
   .button {
     font-size: 1.25rem;
+  }
+}
+
+/* OUTPUT BOX */
+
+.output-box-container {
+  grid-area: output;
+  background: rgba(255, 255, 255, 75%);
+  border: 3px solid rgba(0, 0, 255, 25%);
+  border-radius: 25px;
+  width: 90%;
+  max-width: 800px;
+  min-height: 8em;
+  padding: 1em;
+}
+
+.output-text {
+  font-family: "Comic Sans MS", sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+@media (min-width: 500px) {
+  .output-text {
+    font-size: 1.125rem;
   }
 }
