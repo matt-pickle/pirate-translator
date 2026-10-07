@@ -11,20 +11,29 @@ function App() {
     setText(event.target.value);
   }
 
-  //calls Pirate Translator API with text input and saves translation to state
+  //calls Pirate Monkeyness API with text input and saves translation to state
+  //(the API sends no CORS headers, so the request goes through a same-origin proxy)
   function handleSubmit(event) {
-    fetch("https://api.funtranslations.com/translate/pirate.json?text=" + text)
+    if (text.trim() === "") {
+      return;
+    }
+    fetch("/api/translate?english=" + encodeURIComponent(text))
     .then(res => {
-      if (res.ok) {
-        return res.json();
+      //a host without the proxy rule answers with the app's own HTML page
+      const contentType = res.headers.get("content-type") || "";
+      if (res.ok && contentType.startsWith("text/plain")) {
+        return res.text();
       } else {
-        console.error("API Request Failed!");
-        setPirateText("Error: Request Failed! (Probably exceeded the 5 calls per hour limit)");
+        throw new Error("API Request Failed!");
       }
     })
-    .then(data => {
-      setPirateText(data.contents.translated);
-    });    
+    .then(translation => {
+      setPirateText(translation);
+    })
+    .catch(err => {
+      console.error(err);
+      setPirateText("Error: Request Failed!");
+    });
   }
 
   return (
@@ -35,6 +44,9 @@ function App() {
       />
       <OutputBox pirateText={pirateText}/>
       <div className="attribution-links-container">
+        <a href="https://pirate.monkeyness.com">
+          translations by Pirate Monkeyness (Tim Moses), CC BY 4.0 - pirate.monkeyness.com
+        </a>
         <a href="http://www.freepik.com">
           parchment created by Brgfx - www.freepik.com
         </a>  

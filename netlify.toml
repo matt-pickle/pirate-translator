@@ -1,0 +1,18 @@
+# Netlify builds the app and serves build/ as static files.
+
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# The translator API sends no CORS headers, so the browser can't call it
+# directly. The app requests /api/translate on its own origin and Netlify
+# forwards it; the query string is passed along. In development the "proxy"
+# setting in package.json does the same job.
+[[redirects]]
+  from = "/api/*"
+  to = "https://pirate.monkeyness.com/api/:splat"
+  status = 200
+  force = true
