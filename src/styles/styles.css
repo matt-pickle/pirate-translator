@@ -121,6 +121,7 @@ a {
   border: 3px solid rgb(80, 35, 10);;
   padding: 0 .75em;
   z-index: 1;
+  transition: all 0.2s ease-in-out;
 }
 
 .button.hovered {
