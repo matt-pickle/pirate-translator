@@ -126,6 +126,7 @@ a {
 .button.hovered {
   color: white;
   background: rgb(80, 35, 10);
+  cursor: pointer;
 }
 
 .scroll {
